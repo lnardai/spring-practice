@@ -1,8 +1,9 @@
+package nl.practice.aspect;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import nl.practice.aspect.model.Jedi;
-
+import nl.practice.jpa.entity.Jedi;
 
 public class App {
 
@@ -11,8 +12,8 @@ public class App {
     }
 
     public static void run(){
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext("nl.practice");
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext("nl.practice.aspect");
         Jedi revan = (Jedi) applicationContext.getBean("createJedi");
-        System.out.println(revan.getName());
+        revan.setName("Laci");
     }
 }

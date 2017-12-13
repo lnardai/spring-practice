@@ -2,17 +2,20 @@ package nl.practice.aspect.beans;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-import nl.practice.aspect.model.Jedi;
+import nl.practice.jpa.entity.Jedi;
 
 @Configuration
+@EnableAspectJAutoProxy
 public class BeanConfiguration {
 
 	@Bean
 	public Jedi createJedi(){
-		Jedi jedi = new Jedi();
-		jedi.setName("Revan");
+		Jedi jedi = new Jedi("Revan");
 		return jedi;
 	}
+
+
 
 }

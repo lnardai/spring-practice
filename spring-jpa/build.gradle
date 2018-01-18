@@ -1,0 +1,32 @@
+plugins {
+    id "java"
+    id "org.springframework.boot" version "1.5.9.RELEASE"
+}
+
+repositories {
+    // Use jcenter for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}
+
+def springBootVersion ="1.5.9.RELEASE"
+def jUnitVersion ="5.1.0-M1"
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-aop:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}") {
+        exclude module: "spring-boot-starter-tomcat"
+    }
+
+    compile("com.h2database:h2")
+    compile("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
+
+
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+    testCompile("org.junit.jupiter:junit-jupiter-api:${jUnitVersion}")
+    testCompile("org.junit.jupiter:junit-jupiter-engine:${jUnitVersion}")
+    testCompile("org.junit.vintage:junit-vintage-engine:4.12.0")
+}

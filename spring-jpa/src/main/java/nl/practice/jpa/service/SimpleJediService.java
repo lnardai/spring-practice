@@ -11,6 +11,7 @@ import nl.practice.jpa.repositories.JediRepository;
 @Service
 public class SimpleJediService {
 
+	@Autowired
 	private  JediRepository repository;
 
 	@Autowired

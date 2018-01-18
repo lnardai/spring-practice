@@ -20,14 +20,14 @@ import nl.practice.jpa.service.SimpleJediService;
 @ComponentScan("nl.practice.jpa")
 public class App {
 
-	@Autowired
+	private static final Logger log = LoggerFactory.getLogger(Application.class);
+
 	private SimpleJediService service;
 
+	@Autowired
 	public App(SimpleJediService service){
 		this.service = service;
 	}
-
-	private static final Logger log = LoggerFactory.getLogger(Application.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(App.class);

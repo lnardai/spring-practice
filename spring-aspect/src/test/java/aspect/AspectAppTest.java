@@ -4,15 +4,20 @@ package aspect;/*
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import nl.practice.aspect.App;
 import nl.practice.aspect.beans.AspectsExample;
 
+@Nested
+@DisplayName("BasicAppTest")
 public class AspectAppTest {
 
     @Test
-    public void shouldHaveOneCallWhenRunningApplication() {
+    @DisplayName("shouldHaveOneCallWhenRunningApplication")
+    public void test1() {
         App.run();
         assertEquals(AspectsExample.getCallCount(), 1, "Should be called once");
     }

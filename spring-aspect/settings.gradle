@@ -15,7 +15,5 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'spring-practice'
+rootProject.name = 'spring-aspect'
 
-include 'spring-aspect'
-include 'spring-jpa'

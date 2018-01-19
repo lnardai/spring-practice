@@ -38,7 +38,7 @@ public class Sith {
 
 	@Override
 	public String toString() {
-		return "Jedi{" +
+		return "Sith{" +
 				"id=" + id +
 				", name='" + name + '\'' +
 				'}';

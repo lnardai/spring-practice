@@ -1,6 +1,7 @@
 package nl.practice.jpa.repositories;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
@@ -12,4 +13,6 @@ import nl.practice.jpa.entity.Jedi;
 public interface JediRepository extends JpaRepository<Jedi, Long> {
 
     List<Jedi> findByName(String lastName);
+
+    Optional<Jedi> findById(long id);
 }

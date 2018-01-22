@@ -16,4 +16,6 @@ public interface SithRepository extends JpaRepository<Sith, Long> {
     List<Sith> findByName(String lastName);
 
     Page<Sith> findAll(Pageable pageable);
+
+    long countByName(String name);
 }

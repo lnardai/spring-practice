@@ -2,9 +2,6 @@ package nl.practice.jpa.repositories;
 
 import static org.junit.Assert.assertEquals;
 
-import java.awt.print.Pageable;
-import java.util.List;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -42,6 +39,10 @@ public class SithRepositoryTest {
 		assertEquals(20, sith.getTotalElements());
 	}
 
+	@Test
+	public void shouldCouldUpAllSithWithSameName(){
+		assertEquals(10, repository.countByName("Darth Bane"));
+	}
 
 	private void configDatabaseOnce(){
 		if(repository.count() == 0){

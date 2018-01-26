@@ -10,6 +10,7 @@ import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import nl.practice.jpa.entity.EntityNotFoundException;
@@ -30,6 +31,7 @@ class SimpleJediServiceTest {
 	}
 
 	@Test
+	@RepeatedTest(10)
 	@DisplayName("get Jedi with Optional value successful")
 	void getExactJedi() {
 		when(repositoryMock.findById(quiGonId)).thenReturn(Optional.of(exampleJedi));

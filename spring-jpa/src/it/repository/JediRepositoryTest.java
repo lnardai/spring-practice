@@ -1,4 +1,4 @@
-package nl.practice.jpa.repositories;
+package repository;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,6 +11,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import nl.practice.jpa.entity.Jedi;
+import nl.practice.jpa.repositories.JediRepository;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest

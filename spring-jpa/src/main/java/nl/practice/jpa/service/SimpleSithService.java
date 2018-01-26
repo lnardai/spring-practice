@@ -21,8 +21,12 @@ public class SimpleSithService {
 		this.repository = repository;
 	}
 
-	public List<Sith> getAnySith (String name) {
+	public List<Sith> getAnySith(String name) {
 		return repository.findByName(name);
+	}
+
+	public boolean isNameContainsDarth(String name) {
+		return name.contains("Darth");
 	}
 
 }

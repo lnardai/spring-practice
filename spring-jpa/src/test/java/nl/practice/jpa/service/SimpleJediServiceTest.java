@@ -3,15 +3,21 @@ package nl.practice.jpa.service;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.util.Optional;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestFactory;
 
 import nl.practice.jpa.entity.EntityNotFoundException;
 import nl.practice.jpa.entity.Jedi;
@@ -49,6 +55,13 @@ class SimpleJediServiceTest {
 		EntityNotFoundException exception = assertThrows(EntityNotFoundException.class,
 				() -> service.getExactJedi(777l).getName());
 		assertEquals("JediId:777", exception.getMessage());
+	}
+
+	@TestFactory
+	public Stream<DynamicTest> createMultipleJediNameValidationTest(){
+			return IntStream.iterate(0, n -> n + 2)
+					.limit(10)
+					.mapToObj(n -> dynamicTest("test" + n, () -> assertTrue(n % 2 == 0)));
 	}
 
 }

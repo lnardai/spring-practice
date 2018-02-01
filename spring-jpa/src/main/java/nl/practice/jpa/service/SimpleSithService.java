@@ -25,6 +25,10 @@ public class SimpleSithService {
 		return repository.findByName(name);
 	}
 
+	public Sith getExactSith(long name) {
+		return repository.findOne(name);
+	}
+
 	public boolean isNameContainsDarth(String name) {
 		return name.contains("Darth");
 	}

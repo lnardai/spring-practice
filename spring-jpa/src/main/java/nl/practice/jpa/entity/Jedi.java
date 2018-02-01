@@ -12,6 +12,7 @@ public class Jedi {
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private long id;
 	private String name;
+	private JediRank rank;
 
 	public Jedi(){
 	}
@@ -34,6 +35,18 @@ public class Jedi {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public JediRank getRank() {
+		return rank;
+	}
+
+	public boolean isNameMatches(String name){
+		return this.name.equals(name);
+	}
+
+	public void setRank(JediRank rank) {
+		this.rank = rank;
 	}
 
 	@Override

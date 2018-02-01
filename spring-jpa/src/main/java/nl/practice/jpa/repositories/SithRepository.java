@@ -13,6 +13,8 @@ import nl.practice.jpa.entity.Sith;
 @Repository
 public interface SithRepository extends JpaRepository<Sith, Long> {
 
+    Sith findOne(Long id);
+
     List<Sith> findByName(String lastName);
 
     Page<Sith> findAll(Pageable pageable);

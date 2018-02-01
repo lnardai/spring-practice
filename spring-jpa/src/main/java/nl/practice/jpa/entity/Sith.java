@@ -12,12 +12,18 @@ public class Sith {
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private long id;
 	private String name;
+	private SithRank rank;
 
 	public Sith(){
 	}
 
 	public Sith(String name) {
 		this.name = name;
+	}
+
+	public Sith(String name, SithRank rank) {
+		this.name = name;
+		this.rank = rank;
 	}
 
 	public String getName() {
@@ -34,6 +40,14 @@ public class Sith {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public SithRank getRank() {
+		return rank;
+	}
+
+	public void setRank(SithRank rank) {
+		this.rank = rank;
 	}
 
 	@Override

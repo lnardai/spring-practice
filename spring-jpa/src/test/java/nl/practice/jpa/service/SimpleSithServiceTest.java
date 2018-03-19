@@ -46,7 +46,7 @@ class SimpleSithServiceTest {
 	@ParameterizedTest
 	@ValueSource(strings = {"LORD", "ACOLYTE"})
 	void testWithImplicitArgumentConversion(SithRank rank) {
-		Sith exampleSith = new Sith("Darth Mail", rank);
+		Sith exampleSith = new Sith("Darth Maul", rank);
 		assertEquals(rank, exampleSith.getRank());
 	}
 

@@ -14,9 +14,6 @@ public class Jedi {
 	private String name;
 	private JediRank rank;
 
-	public Jedi(){
-	}
-
 	public Jedi(String name) {
 		this.name = name;
 	}

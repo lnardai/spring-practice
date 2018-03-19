@@ -57,11 +57,4 @@ class SimpleJediServiceTest {
 		assertEquals("JediId:777", exception.getMessage());
 	}
 
-	@TestFactory
-	public Stream<DynamicTest> createMultipleJediNameValidationTest(){
-			return IntStream.iterate(0, n -> n + 2)
-					.limit(10)
-					.mapToObj(n -> dynamicTest("test" + n, () -> assertTrue(n % 2 == 0)));
-	}
-
 }

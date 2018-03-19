@@ -24,6 +24,11 @@ configurations {
 }
 
 test {
+    useJUnitPlatform {
+        excludeTags 'slow'
+        includeEngines 'junit-jupiter', 'junit-vintage'
+    }
+    failFast = true
     testLogging {
         events "passed", "skipped", "failed"
     }

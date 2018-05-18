@@ -1,0 +1,16 @@
+plugins {
+  id "java"
+  id "org.springframework.boot" version "1.5.9.RELEASE"
+}
+
+allprojects {
+  apply plugin: 'java'
+  apply plugin: 'org.springframework.boot'
+
+  repositories {
+    // Use jcenter for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+  }
+}
+
